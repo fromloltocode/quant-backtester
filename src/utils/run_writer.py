@@ -3,6 +3,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Tuple
+from src.analytics.plots import save_equity_plot, save_drawdown_plot
 
 import pandas as pd
 
@@ -50,5 +51,11 @@ def write_run_outputs(
 
     with config_path.open("w", encoding="utf-8") as f:
         json.dump(cfg, f, indent=2, sort_keys=True)
+    
+    equity_path = output_dir / f"{rid}_equity.png"
+    dd_path = output_dir / f"{rid}_drawdown.png"
+
+    save_equity_plot(df, equity_path)
+    save_drawdown_plot(df, dd_path)
 
     return rid, output_dir
