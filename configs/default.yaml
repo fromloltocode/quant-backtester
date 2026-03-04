@@ -1,0 +1,20 @@
+data:
+  path: "data/prices.csv"
+  date_col: "date"
+  price_col: "price"
+
+signal:
+  name: "momentum"
+  window: 5
+
+execution:
+  latency_bars: 1          # execute on next bar
+  spread_bps: 2.0          # total spread in bps (we’ll charge half each side)
+  slippage_bps: 1.0        # extra per-side slippage in bps
+  fee_bps: 0.0             # per-turnover fee (optional)
+  impact_bps: 0.0
+  impact_col: null
+portfolio:
+  initial_capital: 1.0
+analytics:
+ periods_per_year: 252
