@@ -1,0 +1,6 @@
+- Config driven backtesting engine
+- Realistic modeling execution of spread, slippage, and latency
+- includes performance analytics (sharpe, drawdown, turnover)
+- logs the artifact (CSV, JSON, Plots)
+- Parameter sweep engine for research
+- Modular architecture for signals and execution models
